@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misi Kelasku - Pak Ryan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2563eb; --it-color: #7c3aed; --ipa-color: #059669; --bg: #f8fafc; }
+        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; color: #1e293b; }
+        
+        /* Fitur 1: Teks Berjalan (Marquee) */
+        .marquee-info {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+
+        /* Fitur 2: Foto Profil */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            object-fit: cover;
+            background: #e2e8f0;
+        }
+
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); }
+        .page { display: none; padding: 20px 5%; max-width: 900px; margin: auto; animation: fadeIn 0.4s ease; }
+        .active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .grid-menu { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .btn-menu { padding: 20px; border-radius: 15px; color: white; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .bg-it { background: var(--it-color); } .bg-ipa { background: var(--ipa-color); }
+        .dropdown { margin-bottom: 8px; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; }
+        .dropdown-header { background: #f8fafc; padding: 15px; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; }
+        .dropdown-content { display: none; padding: 10px; background: white; border-top: 1px solid #e2e8f0; }
+        .dropdown.active .dropdown-content { display: block; }
+        .file-link { display: block; padding: 10px 15px; text-decoration: none; color: #475569; border-radius: 8px; font-size: 0.9rem; margin-bottom: 5px; background: #f1f5f9; transition: 0.2s; }
+        .file-link:hover { background: #e2e8f0; color: var(--primary); }
+        .mission-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-top: 15px; }
+        .mission-item { background: #f8fafc; padding: 12px; border-radius: 10px; text-align: center; border: 1px solid #e2e8f0; transition: 0.3s; }
+        input { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px; margin-bottom: 15px; font-family: inherit; box-sizing: border-box; }
+        .btn-action { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="marquee-info">
+    <marquee scrollamount="5">
+        📢 Update: Materi Informatika Kelas 7 Bab 2 sudah tersedia! | 🧪 IPA KELAS 8: Praktikum Mandiri dikumpulkan paling lambat hari Jumat. | Semangat belajar anak-anak Pak Ryan! 🚀
+    </marquee>
+</div>
+
+<nav>
+    <div class="logo">Misi Kelasku</div>
+    <button onclick="showPage('home')" style="background:none; border:none; color:var(--primary); font-weight:bold; cursor:pointer;">🏠 Beranda</button>
+</nav>
+
+<div id="home" class="page active">
+    <div class="profile-section" style="margin-top: 20px;">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocISlYB84_3-3T-X9ovOzTkV7FglYncsPtpNQ3gW4AjQrh-GMMyT=s241-c-no" alt="Pak Ryan" class="profile-img">
+        <h2 style="margin: 10px 0 5px 0;">Halo Semua, Saya Pak Ryan 👋</h2>
+        <p style="color: #64748b; margin: 0; padding: 0 10px;">Guru Informatika (Kelas 7) & IPA (Kelas 8). Semangat belajar dan tuntaskan tugasmu!</p>
+    </div>
+
+    <div class="card" style="text-align:center;">
+        <div class="grid-menu">
+            <button class="btn-menu bg-it" onclick="showPage('it-page')">💻 INFORMATIKA 7</button>
+            <button class="btn-menu bg-ipa" onclick="showPage('ipa-page')">🔬 IPA 8</button>
+        </div>
+    </div>
+</div>
+
+<div id="it-page" class="page">
+    <div class="card">
+        <h2>📂 Peta Materi Informatika 7</h2>
+        <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">BAB 1. MICROSOFT EXCEL <span>▼</span></div>
+            <div class="dropdown-content">
+                <a href="#" id="it1-1" class="file-link">P1. Pengenalan Excel</a>
+                <a href="#" id="it1-2" class="file-link">P2. Input Data</a>
+                <a href="#" id="it1-3" class="file-link">P3. Format Data</a>
+                <a href="#" id="it1-4" class="file-link">P4. Rumus Dasar</a>
+                <a href="#" id="it1-5" class="file-link">P5. Sort & Filter</a>
+                <a href="#" id="it1-6" class="file-link">P6. Membuat Grafik</a>
+                <a href="#" id="it1-7" class="file-link">P7. Sumatif</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">BAB 2. BILANGAN BINER <span>▼</span></div>
+            <div class="dropdown-content">
+                <a href="#" id="it2-1" class="file-link">P1. Pengenalan Biner</a>
+                <a href="#" id="it2-2" class="file-link">P2. Desimal ke Biner</a>
+                <a href="#" id="it2-3" class="file-link">P3. Biner ke Desimal</a>
+                <a href="#" id="it2-4" class="file-link">P4. Penerapan Biner</a>
+                <a href="#" id="it2-5" class="file-link">P5. Sumatif</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">BAB 3. WEB BROWSER <span>▼</span></div>
+            <div class="dropdown-content">
+                <a href="#" id="it3-1" class="file-link">P1. Pengenalan Browser</a>
+                <a href="#" id="it3-2" class="file-link">P2. Praktek Browser</a>
+                <a href="#" id="it3-3" class="file-link">P3. Search Engine</a>
+                <a href="#" id="it3-4" class="file-link">P4. Informasi Valid</a>
+                <a href="#" id="it3-5" class="file-link">P5. Sumatif</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">BAB 4. PERUNDUNGAN DIGITAL <span>▼</span></div>
+            <div class="dropdown-content">
+                <a href="#" id="it4-1" class="file-link">P1. Pengertian & Dampak</a>
+                <a href="#" id="it4-2" class="file-link">P2. Proyek Akhir (Poster)</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <h3>🔍 Cek Progres Misi Informatika 7</h3>
+        <input type="text" id="inputIT" placeholder="Ketik Nama Lengkap...">
+        <button class="btn-action" onclick="fetchData('7', 'inputIT', 'resIT')">Cari Misi</button>
+        <div id="resIT"></div>
+    </div>
+</div>
+
+<div id="ipa-page" class="page">
+    <div class="card">
+        <h2>📂 Peta Materi IPA 8</h2>
+        <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">UNIT 1. Zat di Sekitar Kita <span>▼</span></div>
+            <div class="dropdown-content">
+                <a href="#" id="ipa1-1" class="file-link">P1. Mengenal Zat</a>
+                <a href="#" id="ipa1-2" class="file-link">P2. Mengelompokan Zat</a>
+                <a href="#" id="ipa1-3" class="file-link">P3. Unsur & Campuran</a>
+                <a href="#" id="ipa1-5" class="file-link">P5. Praktikum</a>
+                <a href="#" id="ipa1-6" class="file-link">P6. Sumatif</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">UNIT 2. Getaran & Gelombang <span>▼</span></div>
+            <div class="dropdown-content">
+                <a href="#" id="ipa2-1" class="file-link">P1. Getaran</a>
+                <a href="#" id="ipa2-2" class="file-link">P2. Periode & Frekuensi</a>
+                <a href="#" id="ipa2-3" class="file-link">P3. Gelombang</a>
+                <a href="#" id="ipa2-4" class="file-link">P4. Penerapan</a>
+                <a href="#" id="ipa2-5" class="file-link">P5-6. Praktikum</a>
+                <a href="#" id="ipa2-7" class="file-link">P7. Sumatif</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">UNIT 3. Struktur Bumi <span>▼</span></div>
+            <div class="dropdown-content">
+                <a href="#" id="ipa3-1" class="file-link">P1. Mengenal Bumi</a>
+                <a href="#" id="ipa3-2" class="file-link">P2. Struktur Lapisan</a>
+                <a href="#" id="ipa3-3" class="file-link">P3. Dinamika Bumi</a>
+                <a href="#" id="ipa3-4" class="file-link">P4. Dampak Struktur</a>
+                <a href="#" id="ipa3-5" class="file-link">P5. Mitigasi Bencana</a>
+                <a href="#" id="ipa3-6" class="file-link">P6. Praktikum</a>
+                <a href="#" id="ipa3-7" class="file-link">P7. Sumatif</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <h3>🔍 Cek Progres Misi IPA 8</h3>
+        <input type="text" id="inputIPA" placeholder="Ketik Nama Lengkap...">
+        <button class="btn-action" onclick="fetchData('8', 'inputIPA', 'resIPA')">Cari Misi</button>
+        <div id="resIPA"></div>
+    </div>
+</div>
+
+<script>
+    const linkMateri = {
+        "it1-1": "#", "it1-2": "#", "it1-3": "#", "it1-4": "#", "it1-5": "#", "it1-6": "#", "it1-7": "#",
+        "it2-1": "#", "it2-2": "#", "it2-3": "#", "it2-4": "#", "it2-5": "#",
+        "it3-1": "#", "it3-2": "#", "it3-3": "#", "it3-4": "#", "it3-5": "#",
+        "it4-1": "#", "it4-2": "#",
+        "ipa1-1": "#", "ipa1-2": "#", "ipa1-3": "#", "ipa1-5": "#", "ipa1-6": "#",
+        "ipa2-1": "#", "ipa2-2": "#", "ipa2-3": "#", "ipa2-4": "#", "ipa2-5": "#", "ipa2-7": "#",
+        "ipa3-1": "#", "ipa3-2": "#", "ipa3-3": "#", "ipa3-4": "#", "ipa3-5": "#", "ipa3-6": "#", "ipa3-7": "#"
+    };
+
+    window.onload = function() {
+        for (let id in linkMateri) {
+            let el = document.getElementById(id);
+            if (el) {
+                if (linkMateri[id] !== "#") {
+                    el.href = linkMateri[id];
+                    el.target = "_blank";
+                    el.style.color = "#2563eb";
+                    el.style.fontWeight = "bold";
+                } else {
+                    el.style.opacity = "0.5";
+                    el.style.cursor = "not-allowed";
+                    el.innerHTML += " <span style='font-size:0.7rem; color:red;'>(Belum Ada)</span>";
+                    el.onclick = function(e) { e.preventDefault(); };
+                }
+            }
+        }
+    };
+
+    const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1SapIaWzFLWmHeh3Vqc0AV6BB0YBqZ2NB1HTWv6-LuoQ/edit?usp=sharing';
+
+    function showPage(id) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0,0);
+    }
+
+    function toggleDropdown(header) {
+        header.parentElement.classList.toggle('active');
+    }
+
+    function fetchData(sheetName, inputId, resultId) {
+        const nameInput = document.getElementById(inputId).value.toUpperCase();
+        const resDiv = document.getElementById(resultId);
+        if(!nameInput) return alert("Ketik nama dulu!");
+
+        resDiv.innerHTML = "<p>⏳ Mencari data...</p>";
+        const query = encodeURIComponent(`SELECT * WHERE B CONTAINS '${nameInput}'`);
+        const url = SHEET_URL.replace('/edit', `/gviz/tq?tq=${query}&sheet=${sheetName}&t=${new Date().getTime()}`);
+
+        fetch(url).then(r => r.text()).then(t => {
+            const j = JSON.parse(t.substr(47).slice(0, -2));
+            const rows = j.table.rows;
+            const cols = j.table.cols;
+
+            if(rows.length > 0) {
+                const rowData = rows[0].c;
+                let grid = `<div class="mission-grid">`;
+                for(let i = 2; i < rowData.length; i++) {
+                    if(!cols[i] || !cols[i].label) continue;
+                    let val = rowData[i] ? rowData[i].v : "";
+                    let isTuntas = (val === '✓' || val === 'v' || val === 'V');
+                    grid += `<div class="mission-item">
+                        <small style="font-weight:bold; color:#64748b;">${cols[i].label}</small><br>
+                        ${isTuntas ? '<span style="color:green">✅ Tuntas</span>' : '<span style="color:red">❌ Belum</span>'}
+                    </div>`;
+                }
+                grid += `</div>`;
+                resDiv.innerHTML = `
+                <div style="background:#f0f9ff; padding:20px; border-radius:15px; border-left:5px solid #2563eb; margin-top:15px">
+                    <p style="margin:0"><b>Nama:</b> ${rowData[1].v}</p>
+                    ${grid}
+                </div>`;
+            } else {
+                resDiv.innerHTML = "<p style='color:red'>Nama tidak ditemukan!</p>";
+            }
+        }).catch(e => resDiv.innerHTML = "Database tidak terjangkau.");
+    }
+</script>
+</body>
+</html>
