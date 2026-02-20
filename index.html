@@ -99,7 +99,7 @@
 <body>
 
 <div class="marquee-container">
-    <marquee scrollamount="5">📢 PENGUMUMAN: Selesaikan Misi Belajar tepat waktu! | 💻 Informatika 7: Materi Excel Baru Sudah Tersedia | 🔬 IPA 8: Siapkan laporan Praktikum Unit 1!</marquee>
+    <marquee scrollamount="5">📢 PENGUMUMAN: Selesaikan Misi Belajar tepat waktu! | 💻 Informatika 7: Selamat Belajar || 🔬 IPA 8: Siapkan Pengerjaan Studi Kasus!</marquee>
 </div>
 
 <nav>
@@ -198,10 +198,11 @@
             <div class="dropdown-content">
                 <a href="#" id="ipa2-1" class="file-link">P1. Getaran</a>
                 <a href="#" id="ipa2-2" class="file-link">P2. Gelombang</a>
-                <a href="#" id="ipa2-3" class="file-link">P3. Latihan Soal</a>
-                <a href="#" id="ipa2-4" class="file-link">P4. Video Materi Online</a>
+                <a href="#" id="ipa2-3" class="file-link">P3. Cahaya</a>
+                <a href="#" id="ipa2-4" class="file-link">P4. Alat Optik</a>
                 <a href="" id="ipa2-5" class="file-link">P5-6. Studi Kasus</a>
-                <a href="#" id="ipa2-7" class="file-link">P7. Sumatif Unit 2</a>
+                <a href="#" id="ipa2-7" class="file-link">P7. Latihan Soal</a>
+                <a href="#" id="ipa2-8" class="file-link">P8. Video Materi Online</a>
             </div>
         </div>
 
@@ -230,13 +231,37 @@
 <script>
     // MASUKKAN LINK GOOGLE DRIVE DI SINI
     const linkMateri = {
+        // Informatika 7
         "it1-1": "https://docs.google.com/presentation/d/1fBfAi93FaBsx7ff4eTg4o7mWAekkVHUW/edit?usp=sharing&ouid=116310823270248933223&rtpof=true&sd=true", "it1-2": "#", "it1-3": "#", "it1-4": "#", "it1-5": "#", "it1-6": "#", "it1-7": "#", "it1-8": "#", "it1-9": "#",
         "it2-1": "#", "it2-2": "#", "it2-3": "#", "it2-4": "#", "it2-5": "#",
         "it3-1": "#", "it3-2": "#", "it3-3": "#", "it3-4": "#", "it3-5": "#",
         "it4-1": "#", "it4-2": "#",
-        "ipa1-1": "https://docs.google.com/presentation/d/18SUIzpYejApGT4BdcrM6whBRC8oqqQER/edit?usp=sharing&ouid=116310823270248933223&rtpof=true&sd=true", "ipa1-2": "https://docs.google.com/presentation/d/18SUIzpYejApGT4BdcrM6whBRC8oqqQER/edit?usp=drive_link&ouid=116310823270248933223&rtpof=true&sd=true", "ipa1-3": "#", "ipa1-4": "#", "ipa1-5": "#", "ipa1-6": "https://drive.google.com/file/d/1FXF9RNyX7EcFqkzhhL7PgUGIzZM6INgs/view?usp=drive_link",
-        "ipa2-1": "https://docs.google.com/presentation/d/1sLbJyKECeCHUHFKJtWyjJeejI3uIbBnp/edit?usp=drive_link&ouid=116310823270248933223&rtpof=true&sd=true", "ipa2-2": "https://docs.google.com/presentation/d/1PH2Q84eyLKfZ4UkBEt_olh6WgnQwvBs0/edit?usp=drive_link&ouid=116310823270248933223&rtpof=true&sd=true", "ipa2-3": "https://drive.google.com/drive/folders/1fF9N-UtQUhHtYxAa64uKc_COhV_Vv9zq?usp=drive_link", "ipa2-4": "https://www.youtube.com/watch?v=x1x71WPgy8I&pp=ygUrcGVuZXJhcGFuIGdldGFyYW4gZGFuIGdlbG9tYmFuZyBzbXAga2VsYXMgOA%3D%3D", "ipa2-5": "https://drive.google.com/drive/folders/1ujUmX3iwLuyPl9MTqFrEq4JAFsQ1afJg?usp=drive_link", "ipa2-7": "#",
-        "ipa3-1": "https://drive.google.com/drive/folders/12QHPQDPTA-NRmy9T1cPi3Gz_rx1HZJ8s?usp=drive_link", "ipa3-2": "https://drive.google.com/drive/folders/1x_OJQjvL5T32xiC1_fqZjcxYX396E4Px?usp=drive_link", "ipa3-3": "https://drive.google.com/drive/folders/1dl4p9i2N-iOCsIUC6CsCCIkhEh3vPpfn?usp=drive_link", "ipa3-4": "https://drive.google.com/drive/folders/1ASDEYjIz-mm57m4I_Oa0PjFmmSOffsEH?usp=drive_link", "ipa3-5": "https://drive.google.com/drive/folders/1to9Bfh8vRreJbNx4Nrflc_Ybjcg-Eqng?usp=drive_link", "ipa3-6": "https://drive.google.com/drive/folders/1UFllR1zaeUkOagul_R92ifOo_TpLXLQ4?usp=drive_link", "ipa3-7": "https://drive.google.com/drive/folders/1q7Lw2ZkSWrd2weTAaa8CyBGUdOVdkewa?usp=drive_link"
+
+        // IPA Bab 1
+        "ipa1-1": "https://docs.google.com/presentation/d/18SUIzpYejApGT4BdcrM6whBRC8oqqQER/edit?usp=sharing&ouid=116310823270248933223&rtpof=true&sd=true", 
+        "ipa1-2": "https://docs.google.com/presentation/d/18SUIzpYejApGT4BdcrM6whBRC8oqqQER/edit?usp=drive_link&ouid=116310823270248933223&rtpof=true&sd=true", 
+        "ipa1-3": "#", 
+        "ipa1-4": "#", 
+        "ipa1-5": "#", 
+        "ipa1-6": "https://drive.google.com/file/d/1FXF9RNyX7EcFqkzhhL7PgUGIzZM6INgs/view?usp=drive_link",
+        
+        // IPA Bab 2
+        "ipa2-1": "https://docs.google.com/presentation/d/1sLbJyKECeCHUHFKJtWyjJeejI3uIbBnp/edit?usp=drive_link&ouid=116310823270248933223&rtpof=true&sd=true", 
+        "ipa2-2": "https://docs.google.com/presentation/d/1PH2Q84eyLKfZ4UkBEt_olh6WgnQwvBs0/edit?usp=drive_link&ouid=116310823270248933223&rtpof=true&sd=true", 
+        "ipa2-3": "https://materi78.wordpress.com/wp-content/uploads/2013/06/optik_fis1_4.pdf", 
+        "ipa2-4": "https://materi78.wordpress.com/wp-content/uploads/2013/06/altop_fis1_2.pdf", 
+        "ipa2-5": "https://drive.google.com/drive/folders/1ujUmX3iwLuyPl9MTqFrEq4JAFsQ1afJg?usp=drive_link", 
+        "ipa2-7": "https://drive.google.com/drive/folders/1fF9N-UtQUhHtYxAa64uKc_COhV_Vv9zq?usp=drive_link", 
+        "ipa2-8": "https://www.youtube.com/watch?v=x1x71WPgy8I&pp=ygUrcGVuZXJhcGFuIGdldGFyYW4gZGFuIGdlbG9tYmFuZyBzbXAga2VsYXMgOA%3D%3D",
+
+        // IPA Bab 3
+        "ipa3-1": "https://drive.google.com/drive/folders/12QHPQDPTA-NRmy9T1cPi3Gz_rx1HZJ8s?usp=drive_link", 
+        "ipa3-2": "https://drive.google.com/drive/folders/1x_OJQjvL5T32xiC1_fqZjcxYX396E4Px?usp=drive_link", 
+        "ipa3-3": "https://drive.google.com/drive/folders/1dl4p9i2N-iOCsIUC6CsCCIkhEh3vPpfn?usp=drive_link", 
+        "ipa3-4": "https://drive.google.com/drive/folders/1ASDEYjIz-mm57m4I_Oa0PjFmmSOffsEH?usp=drive_link", 
+        "ipa3-5": "https://drive.google.com/drive/folders/1to9Bfh8vRreJbNx4Nrflc_Ybjcg-Eqng?usp=drive_link", 
+        "ipa3-6": "https://drive.google.com/drive/folders/1UFllR1zaeUkOagul_R92ifOo_TpLXLQ4?usp=drive_link", 
+        "ipa3-7": "https://drive.google.com/drive/folders/1q7Lw2ZkSWrd2weTAaa8CyBGUdOVdkewa?usp=drive_link"
     };
 
     window.onload = function() {
